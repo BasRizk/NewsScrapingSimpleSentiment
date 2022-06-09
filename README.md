@@ -1,7 +1,8 @@
 # NewsScrapingSimpleSentiment
-Webscraping news articles of news website and couple different off-the-shelf attempts of sentiment analysis.
+*Webscraping news articles of news website and couple different off-the-shelf attempts of sentiment analysis.*
 
-> By excuting (`~ 27 seconds`) `main.py` in `spyder` IDE at a `conda` environment with `python=3.9` after ensuring `requirements.txt` are all installed, the program goes through the following procedures:
+
+> By executing (`~ 27 seconds` while models are already downloaded) `main.py` in `spyder` IDE or executing `python main.py` in `terminal` at a `conda` environment with `python=3.9` after ensuring `requirements.txt` are all installed, the program goes through the following procedures:
 
 
 1. Webscrapes `https://www.aljazeera.com/where/mozambique` most recent `10` articles, opens them up and extracts title, subtitle, date, and paragraphs for every article and saves them in json format in `data.json`.

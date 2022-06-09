@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+Utils methods for visualization
 
+"""
 import plotly.graph_objects as go
 import plotly.io as pio
 from plotly.subplots import make_subplots
 pio.renderers.default='svg'
 
-def visualize_flair_sentiment(sentiments_df, per_s_sentiments_df):
+def visualize_flair_sentiment(sentiments_df, per_s_sentiments_df, 
+                              show=True, save=True):
     df = (sentiments_df['f_t_score']*sentiments_df['f_t_value']).\
             values.reshape((1, len(sentiments_df['f_t_score'])))
             
@@ -48,10 +52,14 @@ def visualize_flair_sentiment(sentiments_df, per_s_sentiments_df):
                       title_text=\
                       "Flair | Total Text (Top) vs. Per " +
                       "Sentence in order (Bottom) Sentiment")
-    fig.show()
+    if show:
+        fig.show()
+    if save:
+        fig.write_image("flair_sentiment.svg")
     
 
-def visualize_vader_sentiment(sentiments_df):
+def visualize_vader_sentiment(sentiments_df,
+                              show=True, save=True):
     fig = make_subplots(rows=3, cols=1,
                         vertical_spacing=0.02,
                         shared_xaxes=True,
@@ -112,7 +120,10 @@ def visualize_vader_sentiment(sentiments_df):
                       title_text=\
                       "VaderSentiment | Compound (Top) vs." +
                       " Stacked Proportions Based Polarity (Bottom)")        
-    fig.show() 
+    if show:
+        fig.show() 
+    if save:
+        fig.write_image("vader_sentiment.svg")
     
         
         
