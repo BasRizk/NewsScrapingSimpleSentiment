@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+Scraping Articles and JSONifying them
+
+@author: Basem Rizk
+"""
 import json
 import requests
 from tqdm import tqdm
